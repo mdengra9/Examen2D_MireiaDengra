@@ -28,8 +28,7 @@ public class Player : MonoBehaviour
             Jump();
         }
 
-        
-        //_animator.SetBool("IsJumping", !GroundSensor._isGrounded);
+        _animator.SetBool("IsJumping", !GroundSensor._isGrounded);
     }
 
     void FixedUpdate()
