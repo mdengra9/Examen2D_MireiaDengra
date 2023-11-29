@@ -10,7 +10,6 @@ public class Player : MonoBehaviour
 
     private Rigidbody2D _rBody2D;
     [SerializeField] private Animator _animator;
-    [SerializeField] private PlayableDirector _director;
 
     // Start is called before the first frame update
     void Start()
@@ -21,9 +20,9 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        PlayerMovement;
+        PlayerMovement();
 
-        if(GetButtonDown("Jump") && GroundSensor._isGrounded)
+        if(Input.GetButtonDown("Jump") && GroundSensor._isGrounded)
         {
             Jump();
         }
@@ -33,7 +32,7 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        _rBody2D = new Vector 2 (_playerInputH * _playerSpeed, _rBody2D.velocity.y);
+        _rBody2D.velocity = new Vector2(_playerInputH * _playerSpeed, _rBody2D.velocity.y);
     }
 
     void PlayerMovement()
