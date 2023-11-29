@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         _rBody2D = GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -27,7 +28,8 @@ public class Player : MonoBehaviour
             Jump();
         }
 
-        _animator.SetBool("IsJumping", !GroundSensor._isGrounded);
+        
+        //_animator.SetBool("IsJumping", !GroundSensor._isGrounded);
     }
 
     void FixedUpdate()

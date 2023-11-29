@@ -6,7 +6,7 @@ public class GroundSensor : MonoBehaviour
 {
     public static bool _isGrounded;
 
-    void OnTriggerEnter2D (Collider other)
+    void OnTriggerEnter2D (Collider2D other)
     {
         if(other.gameObject.layer == 3)
         {
@@ -14,7 +14,7 @@ public class GroundSensor : MonoBehaviour
         }
     }
 
-    void OnTriggerStay2D (Collider other)
+    void OnTriggerStay2D (Collider2D other)
     {
         if(other.gameObject.layer == 3)
         {
@@ -22,7 +22,7 @@ public class GroundSensor : MonoBehaviour
         }
     }
 
-    void OnTriggerExit2D (Collider other)
+    void OnTriggerExit2D (Collider2D other)
     {
         if(other.gameObject.layer == 3)
         {
